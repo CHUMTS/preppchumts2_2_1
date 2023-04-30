@@ -79,7 +79,7 @@ public class User {
               ", firstName='" + firstName + '\'' +
               ", lastName='" + lastName + '\'' +
               ", email='" + email + '\'' +
-              ", userCar=" + userCar +
+              ", userCar=" + userCar.getModel() + userCar.getSeries() +
               '}';
    }
 }
