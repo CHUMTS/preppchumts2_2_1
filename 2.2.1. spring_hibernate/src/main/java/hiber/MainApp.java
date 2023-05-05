@@ -6,12 +6,13 @@ import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainApp {
    public static void main(String[] args) {
-      AnnotationConfigApplicationContext context = 
-            new AnnotationConfigApplicationContext(AppConfig.class);
+      AnnotationConfigApplicationContext context =
+              new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
       Car car1 = new Car("ford_mustang", 1);
@@ -36,8 +37,9 @@ public class MainApp {
          System.out.println(user);
       }
 
-      System.out.println(userService.getUserByCar(car3));
+      System.out.println(userService.getUserByCar("buick_encore", 3));
 
       context.close();
+
    }
 }
